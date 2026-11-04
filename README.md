@@ -1,6 +1,3 @@
-[README.md](https://github.com/user-attachments/files/34378661/README.md)
-# ifdata-powerbi-analysis
-Análise do Sistema Financeiro Brasileiro (IFData/BCB) em Power BI: concentração, rentabilidade e rede, 6 datas-base.
 # IFData BCB: análise do Sistema Financeiro Nacional em Power BI
 
 **Projeto 2 de 3** do meu portfólio de análise de dados. Os três projetos usam os mesmos dados públicos do IFData (Banco Central do Brasil), em ferramentas diferentes e com senioridade analítica crescente: **Excel → Power BI → Python**.
