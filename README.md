@@ -1,4 +1,4 @@
-# IFData BCB: análise do Sistema Financeiro Nacional em Power BI
+# IFData BCB: análise do Sistema Financeiro Brasileiro em Power BI
 
 **Projeto 2 de 3** do meu portfólio de análise de dados. Os três projetos usam os mesmos dados públicos do IFData (Banco Central do Brasil), em ferramentas diferentes e com senioridade analítica crescente: **Excel → Power BI → Python**.
 
