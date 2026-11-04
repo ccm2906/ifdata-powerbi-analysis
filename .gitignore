@@ -1,0 +1,9 @@
+# Power BI
+~$*
+*.tmp
+.pbi/
+# Sistema e editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
