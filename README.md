@@ -2,13 +2,12 @@
 
 **Projeto 2 de 3** do meu portfólio de análise de dados. Os três projetos usam os mesmos dados públicos do IFData (Banco Central do Brasil), em ferramentas diferentes e com senioridade analítica crescente: **Excel → Power BI → Python**.
 
-<!-- PREENCHER: substituir pelo print da página 1 do relatório -->
-![Visão geral do relatório](docs/img/p1_visao_geral.png)
+![Visão geral do relatório](docs/img/p1_visao_geral.PNG)
 
 > **Data-base mais recente:** 06/2026 · **Série:** 6 datas-base consecutivas (03/2025 a 06/2026) · **Escopo:** conglomerados financeiros e instituições independentes (1.406 em 06/2026)
 
-**Autor:** [PREENCHER: nome] · [PREENCHER: LinkedIn] · [PREENCHER: e-mail]
-**Projeto anterior (Excel):** [PREENCHER: link do repositório em Excel]
+**Autor:** Claudio da Cunha Machado · linkedin.com/in/claudiocmachado · ccm2906@gmail.com
+**Projeto anterior (Excel):** ifdata-excel-analysis
 
 ---
 
@@ -87,14 +86,13 @@ O arquivo `powerbi/ifdata_powerbi.pbix` tem quatro páginas de análise, com fil
 | 3. Rentabilidade e eficiência | ROE, ROA, alavancagem, lucro trimestral, rede | Séries run-rate e LTM, lucro trimestral, dispersão tamanho × ROE, matriz por controle, eficiência por agência |
 | 4. Rede e geografia | Sede por UF e região, agências e postos | Participações por região, Top 5 UFs, rede por controle, rede física dos cinco maiores |
 
-<!-- PREENCHER: prints das páginas -->
 | Página 1 | Página 2 |
 |---|---|
-| ![p1](docs/img/p1_visao_geral.png) | ![p2](docs/img/p2_concentracao.png) |
+| ![p1](docs/img/p1_visao_geral.PNG) | ![p2](docs/img/p2_concentracao.PNG) |
 
 | Página 3 | Página 4 |
 |---|---|
-| ![p3](docs/img/p3_rentabilidade.png) | ![p4](docs/img/p4_rede_geografia.png) |
+| ![p3](docs/img/p3_rentabilidade.PNG) | ![p4](docs/img/p4_rede_geografia.PNG) |
 
 Versão estática do relatório: [`docs/relatorio_ifdata.pdf`](docs/relatorio_ifdata.pdf).
 
