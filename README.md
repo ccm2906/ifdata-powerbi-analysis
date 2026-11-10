@@ -7,7 +7,8 @@
 > **Data-base mais recente:** 06/2026 · **Série:** 6 datas-base consecutivas (03/2025 a 06/2026) · **Escopo:** conglomerados financeiros e instituições independentes (1.406 em 06/2026)
 
 **Autor:** Claudio da Cunha Machado · linkedin.com/in/claudiocmachado · ccm2906@gmail.com
-**Projeto anterior (Excel):**  ifdata-excel-analysis
+
+**Projeto anterior (Excel):**  [ifdata-excel-analysis](https://github.com/ccm2906/ifdata-excel-analysis)
 
 ---
 
