@@ -165,14 +165,12 @@ Os dados do BC podem ser reapresentados. Por isso cada arquivo registra a data d
 
 | Arquivo | Data-base | Documentos entregues até | Baixado em |
 |---|---|---|---|
-| `IFData_202503.csv` | 03/2025 | [PREENCHER] | [PREENCHER] |
-| `IFData_202506.csv` | 06/2025 | [PREENCHER] | [PREENCHER] |
-| `IFData_202509.csv` | 09/2025 | [PREENCHER] | [PREENCHER] |
-| `IFData_202512.csv` | 12/2025 | [PREENCHER] | [PREENCHER] |
-| `IFData_202603.csv` | 03/2026 | 19/05/2026 | [PREENCHER] |
-| `IFData_202606.csv` | 06/2026 | 16/08/2026 | [PREENCHER] |
-
-<!-- PREENCHER: ajustar os nomes dos arquivos aos reais -->
+| `Base-3-2025.csv` | 03/2025 | 19/05/2025 | 10/10/2026 |
+| `Base-6-2025.csv` | 06/2025 | 16/08/2025 | 10/10/2026 |
+| `Base-9-2025.csv` | 09/2025 | 19/11/2025 | 10/10/2026 |
+| `Base-12-2025.csv` | 12/2025 | 16/2/2026 | 10/10/2026 |
+| `Base-3-2026.csv` | 03/2026 | 19/05/2026 | 10/10/2026 |
+| `Base-6-2026.csv` | 06/2026 | 16/08/2026 | 10/10/2026 |
 
 ### 6.3 Dicionário de dados
 
@@ -227,11 +225,11 @@ A base mantém os valores em R$ mil (colunas com sufixo `_RS_mil`). As medidas c
 |---|---|---|---|
 | `fato_ifdata` | Fato | Instituição × data | Valores, rede e atributos classificatórios (TCB, SR, TD, TC, Cidade, UF) |
 | `dim_instituicao` | Dimensão | Um `Código` | 1.508 linhas; nome mais recente por código |
-| `dim_data` | Dimensão | Data-base trimestral | Gerada em DAX, uma linha por data-base |
+| `dim_calendario` | Dimensão | Data-base trimestral | Gerada em DAX, uma linha por data-base |
 | `dim_uf` | Dimensão | UF | 27 UFs com região (IBGE) |
 | `dim_topn` | Auxiliar | Faixa Top N | Sem relacionamento; alimenta a curva de concentração |
 
-Relacionamentos 1:N, com direção única (a dimensão filtra o fato): `dim_instituicao[Codigo]`, `dim_data[Data]` e `dim_uf[UF]` para `fato_ifdata`.
+Relacionamentos 1:N, com direção única (a dimensão filtra o fato): `dim_instituicao[Codigo]`, `dim_calendario[Data]` e `dim_uf[UF]` para `fato_ifdata`.
 
 ### 7.3 Decisões de modelagem
 
@@ -295,7 +293,7 @@ Todos os resultados ficaram próximos da hipótese semestral. Os pequenos desvio
 | Regra semestral do lucro (razões em 7.4) | Confirmada |
 | `Código` como chave: `dim_instituicao` com 1.508 linhas e relacionamento 1:N sem aviso de muitos-para-muitos | OK |
 | Valores de referência do IFData (ex.: Itaú em 06/2026: ativo de R$ 2.845.762.304 mil e lucro do 2T26 de R$ 11.976.553 mil, que é 24.035.567 − 12.059.014) | Conferem |
-| Integridade contábil: ativo = passivo exigível + PL (Itaú, 06/2026: diferença de R$ 1 mil, por arredondamento) | OK. [PREENCHER: confirmar `Dif Contabil %` no total] |
+| Integridade contábil: ativo = passivo exigível + PL (Itaú, 06/2026: diferença de R$ 1 mil, por arredondamento) | OK |
 | Soma das participações por instituição, UF e região | 100% |
 | Totais por região e UF contra o total (1.406 instituições, 14.796 agências, 17.810 postos e R$ 19.458.902.520 mil de ativo) | Conferem |
 | Identidade ROE LTM = ROA LTM × alavancagem | OK |
@@ -339,7 +337,7 @@ Os pontos que o Power BI limita viram o escopo do projeto seguinte:
 | Lucro | Valor do período | Lucro trimestral derivado, LTM e run-rate, com validação |
 | Concentração | Participações | CR1, CR5, HHI, número efetivo, contribuição ao crescimento |
 | Comparabilidade | Não aplicável | YoY e variação trimestral, com tratamento de lacunas |
-| Validação | [PREENCHER] | Testes de integridade e checklists por página |
+| Validação | Checklists por página | Testes de integridade e checklists por página |
 
 ---
 
@@ -357,7 +355,6 @@ ifdata-bcb-powerbi/
 │   └── ifdata_powerbi.pbix
 ├── docs/
 │   ├── medidas_dax.md            # medidas por pasta, com comentários
-│   ├── metodologia.md            # decisões de modelagem (opcional)
 │   ├── relatorio_ifdata.pdf      # versão estática do relatório
 │   └── img/                      # prints das páginas
 ```
@@ -366,9 +363,9 @@ ifdata-bcb-powerbi/
 
 ## 13. Como reproduzir
 
-1. Clone o repositório e instale o **Power BI Desktop** ([PREENCHER: versão utilizada]).
+1. Clone o repositório e instale o **Power BI Desktop**.
 2. Os CSVs estão em `data/raw/`. Se preferir, baixe-os novamente no [IFData](https://www3.bcb.gov.br/ifdata/): data-base, tipo de instituição "Conglomerados Financeiros e Instituições Independentes", relatório "Resumo", formato CSV.
-3. Abra `powerbi/ifdata_powerbi.pbix` e, em **Transformar dados > Configurações da fonte de dados**, aponte para a pasta `data/raw/` do seu computador. [PREENCHER: se houver parâmetro de pasta, informar o nome]
+3. Abra `powerbi/ifdata_powerbi.pbix` e, em **Transformar dados > Configurações da fonte de dados**, aponte para a pasta `data/raw/` do seu computador.
 4. Atualize o modelo. As datas, o calendário e as dimensões são recalculados.
 5. Confira os valores de referência da seção 8 (por exemplo, Itaú em 06/2026).
 
@@ -398,7 +395,7 @@ Key findings (Jun/2026 vs Jun/2025): assets grew 12.6% while quarterly profit wa
 ## 16. Fonte, licença e contato
 
 - **Fonte dos dados:** Banco Central do Brasil, [IFData](https://www3.bcb.gov.br/ifdata/). Dados públicos, sujeitos a reapresentação. [PREENCHER: confirmar os termos de uso e de citação no site do BCB]
-- **Licença do código e da documentação:** [PREENCHER: sugestão MIT]. Os dados mantêm os termos da fonte.
-- **Contato:** [PREENCHER: LinkedIn e e-mail]
+- **Licença do código e da documentação:** MIT. Os dados mantêm os termos da fonte.
+- **Contato:** · linkedin.com/in/claudiocmachado · ccm2906@gmail.com
 
-*Última atualização: 28/10/2026.*
+*Última atualização: 10/11/2026.*
