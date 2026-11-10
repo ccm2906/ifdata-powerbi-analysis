@@ -95,7 +95,12 @@ O arquivo `powerbi/ifdata_powerbi.pbix` tem quatro páginas de análise, com fil
 |---|---|
 | ![p3](docs/img/p3_rentabilidade.PNG) | ![p4](docs/img/p4_rede_geografia.PNG) |
 
-Versão estática do relatório: [`docs/relatorio_ifdata.pdf`](docs/relatorio_ifdata.pdf).
+📊 Versão estática do relatório: [`docs/relatorio_ifdata.pdf`](docs/relatorio_ifdata.pdf).
+
+📊 [Acesse o Dashboard Interativo](https://app.powerbi.com/view?r=eyJrIjoiNWUxY2RmZjMtMjRlNS00M2UzLWFjYjktZGI3Yzc2MDc5NjZjIiwidCI6IjdlOTNlMjg2LWIyOWEtNDQ1NC1hNDFhLWU4NDE5ZWM5ZGViNSJ9)
+*(Dica: Use as setas `< 1 de 4 >` no rodapé da tela para navegar entre todas as páginas do relatório).*
+
+
 
 ---
 
